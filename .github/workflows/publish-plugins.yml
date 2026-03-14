@@ -1,5 +1,3 @@
-name: Publish Plugins
-
 on:
   push:
     branches:
@@ -22,7 +20,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -45,4 +43,4 @@ jobs:
       - name: Publish Plugins (Fork - All Branches)
         if: github.repository != 'LNReader/lnreader-plugins'
         run: npm run publish:plugins -- --all-branches
-        shell: bash
+        shell: bashh
